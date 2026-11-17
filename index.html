@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff4d9" />
+  <title>Vila do Aprendizado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="app">
+    <section id="welcome-screen" class="screen welcome-screen">
+      <div class="welcome-card">
+        <div class="sun">☀️</div>
+        <div class="brand-mark">🏡</div>
+        <p class="eyebrow">UM LUGAR PARA DESCOBRIR E APRENDER</p>
+        <h1>Vila do <span>Aprendizado</span></h1>
+        <p class="welcome-copy">Prepare-se para brincar, descobrir e conquistar estrelas!</p>
+        <form id="welcome-form" class="name-form">
+          <label for="student-name">Qual é o seu nome?</label>
+          <input id="student-name" maxlength="24" autocomplete="off" placeholder="Digite seu nome" required />
+          <button class="primary-button" type="submit">ENTRAR NA VILA <span>➜</span></button>
+        </form>
+        <div class="welcome-decor decor-one">🌼</div>
+        <div class="welcome-decor decor-two">🦋</div>
+      </div>
+      <p class="tiny-note">Um desafio de cada vez. Você consegue! ⭐</p>
+    </section>
+
+    <section id="village-screen" class="screen village-screen hidden">
+      <header class="topbar">
+        <div class="mini-brand"><span>🏡</span><div><strong>Vila do Aprendizado</strong><small>Um mundo de descobertas</small></div></div>
+        <div class="player-info"><span>👋 Olá, <strong id="player-name">criança</strong>!</span><span class="star-counter">⭐ <b id="star-total">0</b></span></div>
+      </header>
+      <section class="village-intro">
+        <p class="eyebrow">ESCOLHA UMA CASINHA</p>
+        <h2>Por onde vamos começar?</h2>
+        <p>Complete os desafios para abrir novos caminhos pela vila.</p>
+      </section>
+      <div class="village-scene">
+        <div class="cloud cloud-a">☁️</div><div class="cloud cloud-b">☁️</div>
+        <div class="rainbow">🌈</div>
+        <div class="houses-grid" id="houses-grid"></div>
+        <div class="village-ground"></div>
+        <div class="village-flower flower-a">🌷</div><div class="village-flower flower-b">🌻</div>
+      </div>
+      <footer class="village-footer">
+        <span>⭐ Cada desafio vale uma estrela!</span>
+        <button id="reset-progress" class="text-button" type="button">Recomeçar jogo</button>
+      </footer>
+    </section>
+
+    <section id="game-screen" class="screen game-screen hidden">
+      <header class="game-topbar">
+        <button id="back-home" class="back-button" type="button">← <span>Vila</span></button>
+        <div class="game-house-title"><span id="game-house-icon">🔤</span><strong id="game-house-name">Casinha</strong></div>
+        <div class="star-counter">⭐ <b id="game-stars">0</b></div>
+      </header>
+      <div class="game-progress-wrap">
+        <div class="game-progress-label"><span id="step-label">Desafio 1 de 5</span><span id="progress-percent">0%</span></div>
+        <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+      <section class="challenge-card">
+        <div class="challenge-mascot" id="challenge-mascot">🦊</div>
+        <p class="eyebrow" id="challenge-category">VAMOS APRENDER!</p>
+        <h2 id="challenge-title">Vamos começar?</h2>
+        <p id="challenge-instruction" class="challenge-instruction">Escolha a resposta certa.</p>
+        <div id="challenge-content" class="challenge-content"></div>
+        <div id="feedback" class="feedback" aria-live="polite"></div>
+        <button id="continue-button" class="primary-button continue-button hidden" type="button">CONTINUAR <span>➜</span></button>
+      </section>
+      <p class="game-tip">Não tenha pressa. Você pode tentar novamente! 💛</p>
+    </section>
+
+    <section id="complete-screen" class="screen complete-screen hidden">
+      <div class="complete-card">
+        <div class="confetti-title">🎉 ⭐ 🎉</div>
+        <div class="trophy">🏆</div>
+        <p class="eyebrow">MISSÃO CUMPRIDA!</p>
+        <h2 id="complete-title">Muito bem!</h2>
+        <p id="complete-copy">Você concluiu todos os desafios desta casinha.</p>
+        <div class="completion-stars" id="completion-stars">⭐⭐⭐⭐⭐</div>
+        <button id="complete-next" class="primary-button" type="button">VOLTAR PARA A VILA <span>➜</span></button>
+      </div>
+    </section>
+
+    <section id="final-screen" class="screen complete-screen hidden">
+      <div class="complete-card final-card">
+        <div class="confetti-title">🌈 🎉 ⭐</div>
+        <div class="trophy">🏅</div>
+        <p class="eyebrow">VOCÊ EXPLOROU A VILA TODINHA!</p>
+        <h2>Parabéns, <span id="final-name">campeão</span>!</h2>
+        <p>Você completou as cinco casinhas e mostrou muita curiosidade para aprender.</p>
+        <div class="final-score"><strong id="final-stars">25</strong><span>estrelas conquistadas</span></div>
+        <div class="certificate">
+          <div class="certificate-icon">📜</div>
+          <strong>Certificado de Pequeno Explorador</strong>
+          <span id="certificate-name"></span>
+          <small>Concluiu a Vila do Aprendizado</small>
+        </div>
+        <button id="play-again" class="primary-button" type="button">BRINCAR DE NOVO <span>↻</span></button>
+        <button id="final-home" class="text-button" type="button">Voltar para a vila</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

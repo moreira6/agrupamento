@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  --ink: #35415b;
+  --muted: #7e879a;
+  --cream: #fff8e9;
+  --paper: #ffffff;
+  --yellow: #ffc94f;
+  --coral: #ff8e83;
+  --blue: #79c8ed;
+  --green: #8dcf9a;
+  --purple: #b5a0e8;
+  --shadow: 0 14px 35px rgba(67, 76, 105, .12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; font-family: 'Nunito', 'Trebuchet MS', sans-serif;
+  color: var(--ink); background: #fff7e8;
+}
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 4px solid #5db9e5; outline-offset: 3px; }
+.hidden { display: none !important; }
+.screen { min-height: 100vh; }
+.welcome-screen, .complete-screen {
+  display: grid; place-items: center; padding: 28px 18px;
+  background: radial-gradient(circle at 12% 15%, #fff 0 5%, transparent 5.5%),
+              linear-gradient(145deg, #fff4d9, #e9f8ff 60%, #f4eaff);
+}
+.welcome-card, .complete-card {
+  width: min(100%, 540px); position: relative; overflow: hidden; text-align: center;
+  background: rgba(255,255,255,.94); border: 5px solid white; border-radius: 34px;
+  padding: 42px 42px 38px; box-shadow: var(--shadow);
+}
+.sun { position: absolute; top: 18px; right: 24px; font-size: 36px; }
+.brand-mark { font-size: 65px; line-height: 1.1; }
+.eyebrow { margin: 10px 0 7px; color: #8d91a4; font-size: 11px; font-weight: 900; letter-spacing: 2px; }
+h1 { margin: 0; font-size: clamp(32px, 6vw, 47px); line-height: 1.12; font-weight: 900; }
+h1 span { color: #ee9b45; display: block; }
+.welcome-copy { color: var(--muted); font-size: 16px; margin: 14px 0 27px; }
+.name-form { display: grid; gap: 11px; text-align: left; max-width: 330px; margin: auto; }
+.name-form label { font-weight: 900; font-size: 14px; }
+.name-form input { border: 2px solid #e8eaf1; border-radius: 15px; padding: 14px 16px; background: #fbfcff; color: var(--ink); }
+.primary-button { border: 0; border-radius: 15px; padding: 15px 22px; color: #59421b; background: var(--yellow); font-weight: 900; letter-spacing: .4px; box-shadow: 0 5px 0 #e8ad35; transition: transform .15s, box-shadow .15s; }
+.primary-button:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #e8ad35; }
+.primary-button:active { transform: translateY(3px); box-shadow: 0 2px 0 #e8ad35; }
+.primary-button span { margin-left: 8px; font-size: 18px; }
+.welcome-decor { position: absolute; font-size: 28px; opacity: .8; }
+.decor-one { left: 20px; bottom: 20px; }.decor-two { right: 24px; bottom: 22px; }
+.tiny-note { color: #9299a9; font-weight: 700; font-size: 13px; margin: 18px 0 0; }
+
+.village-screen { background: #fff8e9; overflow: hidden; }
+.topbar, .game-topbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; padding: 17px clamp(18px, 5vw, 70px); background: rgba(255,255,255,.88); }
+.mini-brand { display: flex; align-items: center; gap: 10px; }.mini-brand > span { font-size: 34px; }
+.mini-brand strong, .mini-brand small { display: block; }.mini-brand strong { font-size: 16px; }.mini-brand small { color: var(--muted); font-size: 11px; }
+.player-info { display: flex; align-items: center; gap: 17px; font-size: 14px; }
+.star-counter { background: #fff1c8; color: #926514; border-radius: 20px; padding: 8px 13px; font-weight: 900; white-space: nowrap; }
+.village-intro { text-align: center; padding: 26px 16px 8px; }
+.village-intro h2 { font-size: clamp(25px, 4vw, 35px); margin: 0; font-weight: 900; }
+.village-intro > p:last-child { color: var(--muted); margin: 7px 0 0; }
+.village-scene { position: relative; max-width: 1100px; min-height: 480px; margin: 0 auto; padding: 42px 35px 95px; overflow: hidden; }
+.village-scene::before { content: ''; position: absolute; inset: 25px 0 0; background: linear-gradient(#dff5ff 0 58%, #bde5a8 58% 100%); border-radius: 40px 40px 0 0; }
+.cloud, .rainbow { position: absolute; z-index: 1; font-size: 50px; opacity: .8; }.cloud-a { left: 9%; top: 32px; }.cloud-b { right: 12%; top: 64px; }.rainbow { right: 27%; top: 10px; font-size: 40px; }
+.houses-grid { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; align-items: end; padding-top: 100px; }
+.house-card { border: 0; background: rgba(255,255,255,.9); border-radius: 23px; padding: 15px 8px 14px; min-height: 190px; color: var(--ink); box-shadow: 0 8px 0 rgba(78,110,88,.13), 0 12px 22px rgba(60,85,85,.10); transition: transform .18s; position: relative; }
+.house-card:not(:disabled):hover { transform: translateY(-8px) rotate(-1deg); }
+.house-card:disabled { cursor: not-allowed; filter: grayscale(.55); opacity: .67; }
+.house-emoji { display: block; font-size: 61px; line-height: 1.35; filter: drop-shadow(0 4px 2px rgba(0,0,0,.08)); }
+.house-name { display: block; font-size: 14px; font-weight: 900; line-height: 1.15; margin: 6px 0; }
+.house-status { display: block; font-size: 11px; font-weight: 800; color: #8a91a0; }
+.house-card.done { background: #f1fff1; }.house-card.done .house-status { color: #3a9b58; }
+.lock { position: absolute; right: 10px; top: 9px; font-size: 17px; }
+.village-ground { position: absolute; z-index: 1; height: 45px; bottom: 0; left: -5%; width: 110%; background: #9bd58e; border-radius: 50% 50% 0 0; }
+.village-flower { position: absolute; z-index: 2; bottom: 30px; font-size: 35px; }.flower-a { left: 6%; }.flower-b { right: 7%; }
+.village-footer { display: flex; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 20px 22px; color: #8992a3; font-size: 13px; font-weight: 800; }
+.text-button { border: 0; background: transparent; color: #78849a; text-decoration: underline; font-weight: 800; }
+
+.game-screen { background: linear-gradient(145deg, #f1f9ff, #fff7e7); padding-bottom: 35px; }
+.game-topbar { padding-top: 14px; padding-bottom: 14px; }
+.back-button { border: 0; background: #f0f2f7; color: var(--ink); padding: 9px 14px; border-radius: 12px; font-weight: 900; }
+.game-house-title { display: flex; align-items: center; gap: 9px; font-size: 17px; }.game-house-title span { font-size: 28px; }
+.game-progress-wrap { max-width: 700px; margin: 28px auto 17px; padding: 0 18px; }
+.game-progress-label { display: flex; justify-content: space-between; font-size: 12px; color: #818b9d; font-weight: 900; margin-bottom: 8px; }
+.progress-track { height: 11px; border-radius: 20px; background: #e5eaf1; overflow: hidden; }.progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, #8bd5a0, #f7cb61); border-radius: inherit; transition: width .3s; }
+.challenge-card { width: min(92%, 700px); min-height: 440px; margin: auto; background: white; border-radius: 30px; box-shadow: var(--shadow); padding: 28px clamp(18px, 5vw, 42px) 30px; text-align: center; position: relative; }
+.challenge-mascot { font-size: 47px; }.challenge-card h2 { font-size: clamp(24px, 4vw, 31px); margin: 5px 0; }.challenge-instruction { color: var(--muted); margin: 7px 0 22px; }
+.challenge-content { min-height: 150px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 13px; }
+.question-picture { width: 112px; height: 104px; display: grid; place-items: center; border-radius: 22px; background: #fff5dc; font-size: 67px; margin: 0 auto 10px; }
+.question-word { font-size: 22px; font-weight: 900; letter-spacing: 2px; margin: 5px 0 12px; }
+.answer-option { min-width: 105px; min-height: 65px; border: 3px solid #e9edf4; background: #fbfcff; border-radius: 17px; color: var(--ink); font-size: 22px; font-weight: 900; padding: 12px 17px; transition: .15s; }
+.answer-option:hover { border-color: #9bd4ed; background: #f0faff; transform: translateY(-3px); }
+.answer-option.correct { border-color: #7acb91; background: #edfff1; }.answer-option.wrong { border-color: #f2a09a; background: #fff0ef; animation: shake .25s; }
+.feedback { min-height: 30px; margin: 12px 0 5px; font-weight: 900; font-size: 16px; }.feedback.good { color: #389b59; }.feedback.try { color: #d17b58; }
+.continue-button { min-width: 210px; margin-top: 5px; }
+.game-tip { text-align: center; color: #98a0ae; font-size: 13px; font-weight: 700; margin-top: 18px; }
+.memory-card { width: 105px; height: 92px; border: 3px solid #dfe8f3; border-radius: 16px; background: #f5f8ff; font-size: 34px; font-weight: 900; color: var(--ink); transition: .15s; }
+.memory-card.selected { background: #fff3ce; border-color: #f2c65b; }.memory-card.matched { background: #eaffef; border-color: #8bd39d; opacity: .8; }
+
+.complete-card { padding-top: 32px; }.confetti-title { font-size: 30px; }.trophy { font-size: 76px; margin: 8px 0; }.complete-card h2 { font-size: 32px; margin: 6px 0; }.complete-card p:not(.eyebrow) { color: var(--muted); line-height: 1.5; }
+.completion-stars { font-size: 30px; margin: 20px 0; letter-spacing: 4px; }.complete-card .primary-button { min-width: 245px; }
+.final-score { display: flex; align-items: center; justify-content: center; gap: 12px; background: #fff5d9; border-radius: 18px; padding: 12px; margin: 18px 0; color: #936a16; }.final-score strong { font-size: 34px; }.final-score span { font-weight: 800; }
+.certificate { border: 2px dashed #e6bd62; border-radius: 17px; padding: 16px; display: grid; gap: 5px; margin: 17px 0 22px; background: #fffdf5; }.certificate-icon { font-size: 28px; }.certificate strong { font-size: 15px; }.certificate span { font-size: 20px; font-weight: 900; color: #d18b34; }.certificate small { color: var(--muted); }
+.final-card .text-button { display: block; margin: 12px auto 0; }
+@keyframes shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
+@keyframes pop { 0%{transform:scale(.8)} 70%{transform:scale(1.08)} 100%{transform:scale(1)} }
+.pop { animation: pop .3s ease; }
+
+@media (max-width: 760px) {
+  .houses-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); max-width: 470px; margin: auto; padding-top: 80px; }
+  .house-card { min-height: 160px; }.house-emoji { font-size: 52px; }
+  .village-scene { padding: 25px 18px 80px; }.village-scene::before { inset-top: 10px; }
+  .village-ground { bottom: 0; }.village-footer { gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .topbar { padding: 13px 15px; }.player-info { gap: 8px; font-size: 12px; }
+  .challenge-card { min-height: 430px; }.answer-option { min-width: 90px; }
+}
+@media (max-width: 420px) {
+  .welcome-card, .complete-card { padding: 34px 20px 28px; }.mini-brand small { display: none; }
+  .player-info > span:first-child { display: none; }.game-house-title { font-size: 14px; }
+  .memory-card { width: 85px; height: 82px; }
+}
